@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class Service {
+    private String smartphone;
+    private boolean deviceReplacement;
+    private String issues;
+    private String repairStatus;
+    private String nextOrderDiscountCode;
+    
+    public Service(String smartphone) {
+        this.smartphone = smartphone;
+        this.deviceReplacement = false;
+        this.issues = "defective";
+        this.repairStatus = "repair in progress";
+        this.nextOrderDiscountCode = "15%";
+    }
+    
+    public void sendQuestionnaire() {
+       Scanner scanner = new Scanner(System.in);
+       System.out.println("Question form for proper operation");
+       System.out.print("Do you have a smartphone? (Yes/No): ");
+       String answer = scanner.nextLine();
+       System.out.print("Battery status (Good/Bad): ");
+       String batteryStatus = scanner.nextLine();
+        // kwdikas gia forma erwthsewn
+}
+       
+    
+    public void askDeviceReplacement() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Do you wish to replace your device with a new one? (Yes/No)");
+        String answer = scanner.nextLine();
+        if (answer.equalsIgnoreCase("Yes")) {
+            deviceReplacement = true;
+        }
+    }
+    
+    public void fillServiceForm() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Battery condition is not good");
+        issues = scanner.nextLine();
+    }
+    
+    public void updateRepairStatus(String status) {
+        repairStatus = status;
+    }
+    
+    public void setNextOrderDiscountCode(String discountCode) {
+        nextOrderDiscountCode = discountCode;
+    }
+    
+    public void printServiceInfo() {
+        System.out.println("Service Information:");
+        System.out.println("Smartphone: " + smartphone);
+        System.out.println("Replacement " + (deviceReplacement ? "Yes" : "No"));
+        System.out.println("Battery status " + issues);
+        System.out.println("Repair status " + repairStatus);
+        System.out.println("Next order discount: " + nextOrderDiscountCode);
+    }
+    
+    public static void main(String[] args) {
+        Service service = new Service("Smartphone");
+        service.sendQuestionnaire();
+        service.askDeviceReplacement();
+        service.fillServiceForm();
+        service.updateRepairStatus("The repair has been completed and the product has been shipped");
+        service.setNextOrderDiscountCode("15%");
+        service.printServiceInfo();
+    }
+}
