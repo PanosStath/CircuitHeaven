@@ -1,0 +1,73 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class TrackDelivery {
+    private int orderID;
+    private int courierNumber;
+    private String estimatedArrival;
+    private String currentLocation;
+    private static List<Integer> trackList = new ArrayList<>();
+
+    public TrackDelivery(int orderID, int courierNumber, String estimatedArrival, String currentLocation) {
+        this.orderID = orderID;
+        this.courierNumber = courierNumber;
+        this.estimatedArrival = estimatedArrival;
+        this.currentLocation = currentLocation;
+    }
+
+    public void goTo(String location) {
+       
+    }
+
+    public void find() {
+        
+    }
+
+    public void show() { 
+        display();
+    }
+
+    public void returnItem() {
+        
+    }
+
+    public void track() {
+      
+    }
+
+    public void checkUpdates() {
+        
+    }
+
+    public boolean isDelivered() {
+       
+        return false;
+    }
+
+    public void save() {
+ 
+    }
+
+    public String get() {
+        return "";
+    }
+
+    public void display() {
+        System.out.println("orderID: " + orderID + "\n" +
+                           "courierNumber: " + courierNumber + "\n" +
+                           "estimatedArrival: " + estimatedArrival + "\n" +
+                           "currentLocation: " + currentLocation);
+    }
+
+    public static void main(String[] args) {
+        int orderID = 12345;
+        int courierNumber = 67890;
+        String estimatedArrival = "2023-05-28";
+        String currentLocation = "Athens";
+        
+        TrackDelivery trackDelivery = new TrackDelivery(orderID, courierNumber, estimatedArrival, currentLocation);
+        trackDelivery.display();
+        
+        
+    }
+}
